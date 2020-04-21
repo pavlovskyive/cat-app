@@ -9,54 +9,57 @@
 import SwiftUI
 import CoreLocation
 
-struct Item: Hashable, Codable, Identifiable {
-    var id: String
-    var name: String
-}
-
-//let itemsData: [Item] = load("https://api.thecatapi.com/v1/breeds")
-
-/*
-func load<T: Decodable>(_ url: String) -> [T] {
-    var items: [T] = []
+class NetworkManager: ObservableObject {
+    @Published var data:Data?
     
-    guard let url = URL(string: url)
-        else {
-            fatalError("Couldn't unwrap url")
-    }
-    print()
-    
-    URLSession.shared.dataTask(with: url) { (data, _, _) in
-        items = try! JSONDecoder().decode([T].self, from: data!)
-    }
-    print(items)
-    return items
-}
-*/
-
-class NetworkManager {
-    func fetchItems(completionHandler: @escaping ([Item]) -> Void) {
-      let url = URL(string: "https://api.thecatapi.com/v1/breeds")!
-
-      let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-        if let error = error {
-          print("Error with fetching data: \(error)")
-          return
-        }
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              (200...299).contains(httpResponse.statusCode) else {
-                print("Error with the response, unexpected status code: \(String(describing: response))")
-          return
-        }
-
-        if let data = data,
-            let items = try? JSONDecoder().decode([Item].self, from: data) {
-                DispatchQueue.main.async {
-                    completionHandler(items)
-                }
+    init(urlString:String) {
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                self.data = data
             }
-        })
+        }
         task.resume()
     }
+    
+    func fetch<T: Codable>(query: String, completionHandler: @escaping ([T]) -> Void) {
+        let url = URL(string: "https://api.thecatapi.com/v1/" + query)!
+
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+          if let error = error {
+            print("Error with fetching data: \(error)")
+            return
+          }
+          
+          guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                  print("Error with the response, unexpected status code: \(String(describing: response))")
+            return
+          }
+
+          if let data = data,
+              let items = try? JSONDecoder().decode([T].self, from: data) {
+                  DispatchQueue.main.async {
+                      completionHandler(items)
+                  }
+              }
+          })
+          task.resume()
+     }
+     
+}
+
+struct Breed: Hashable, Codable, Identifiable {
+    var description: String
+    var id: String
+    var life_span: String
+    var name: String
+    var origin: String
+    var temperament: String
+}
+
+struct ImageURL: Codable {
+    var id: String
+    var url: String
 }

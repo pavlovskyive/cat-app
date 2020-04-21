@@ -10,12 +10,11 @@ import SwiftUI
 import Combine
 
 final class UserData: ObservableObject {
-    @Published var items: [Item] = []
+    @Published var breeds: [Breed] = []
     
     init() {
-        NetworkManager().fetchItems { (items) in
-            print(items)
-            self.items = items
+        NetworkManager(urlString: "").fetch(query: "breeds"){ (breeds: [Breed]) in
+            self.breeds = breeds
         }
     }
 }

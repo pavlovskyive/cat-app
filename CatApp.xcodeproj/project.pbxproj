@@ -22,6 +22,7 @@
 		794D61DB244C777C008EC73B /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61DA244C777C008EC73B /* TabsView.swift */; };
 		794D61E0244C8F88008EC73B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61DF244C8F88008EC73B /* Data.swift */; };
 		7968AF8A244C9A8D0051FC38 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968AF89244C9A8D0051FC38 /* UserData.swift */; };
+		799E8F99244DF96900AD4F03 /* BreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E8F98244DF96900AD4F03 /* BreedDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		794D61DA244C777C008EC73B /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		794D61DF244C8F88008EC73B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		7968AF89244C9A8D0051FC38 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		799E8F98244DF96900AD4F03 /* BreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				794D61D8244C7720008EC73B /* Test.swift */,
 				794D61DA244C777C008EC73B /* TabsView.swift */,
 				79431488244C650C001B727D /* Tab.swift */,
+				799E8F98244DF96900AD4F03 /* BreedDetail.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				794D61D5244C7683008EC73B /* Quiz.swift in Sources */,
 				7968AF8A244C9A8D0051FC38 /* UserData.swift in Sources */,
 				794D61D7244C7709008EC73B /* About.swift in Sources */,
+				799E8F99244DF96900AD4F03 /* BreedDetail.swift in Sources */,
 				7943146F244C62CF001B727D /* AppDelegate.swift in Sources */,
 				79431476244C62CF001B727D /* ContentView.swift in Sources */,
 				79431489244C650C001B727D /* Tab.swift in Sources */,

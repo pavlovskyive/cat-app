@@ -13,9 +13,9 @@ struct Breeds: View {
     
     var body: some View {
         List {
-            ForEach(userData.items) { item in
-                NavigationLink(destination: Text(item.name)) {
-                    Text(item.name)
+            ForEach(userData.breeds) { breed in
+                NavigationLink(destination: BreedDetail(breed: breed)) {
+                    Text(breed.name)
                 }
             }
         }
@@ -25,6 +25,6 @@ struct Breeds: View {
 
 struct Breeds_Previews: PreviewProvider {
     static var previews: some View {
-        Breeds()//.environmentObject(UserData())
+        Breeds()
     }
 }
