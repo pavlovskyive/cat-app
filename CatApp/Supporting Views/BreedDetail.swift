@@ -34,25 +34,30 @@ struct BreedDetail: View {
         ScrollView {
             VStack (alignment: .leading, spacing: 20){
                 ImageView(withURL: getUrlFromData(data: networkManager.data))
+                    //.shadow(color: Color(.systemGray4), radius: 2, x: 0, y: 2)
                 
                 Text(breed.description)
                     .font(.body)
                     .lineLimit(nil)
+                    .padding([.top, .horizontal])
                     
                 VStack(alignment: .leading) {
                     Text("Origin").font(.subheadline)
                     Text(self.breed.origin).font(.headline)
                 }
+                .padding(.horizontal)
                 
                 VStack(alignment: .leading) {
                     Text("Life Span").font(.subheadline)
                     Text(self.breed.life_span).font(.headline)
                 }
+                .padding(.horizontal)
                 
                 VStack(alignment: .leading) {
                     Text("Temperament").font(.subheadline)
                     Text(self.breed.temperament).font(.headline)
                 }
+                .padding(.horizontal)
             }
             .padding()
             .navigationBarTitle(breed.name)
@@ -75,7 +80,7 @@ struct ImageView: View {
             .aspectRatio(contentMode: .fit)
             .clipped()
             .cornerRadius(5)
-            .animation(.spring())
+            .animation(.easeOut)
         }
     }
 }

@@ -25,6 +25,6 @@ struct Breeds: View {
 
 struct Breeds_Previews: PreviewProvider {
     static var previews: some View {
-        Breeds()
+        Breeds().environmentObject(UserData())
     }
 }

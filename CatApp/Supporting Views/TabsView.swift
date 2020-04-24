@@ -11,8 +11,8 @@ import SwiftUI
 struct NavigationLinkButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.95 : 1)
-            .opacity(configuration.isPressed ? 0.8 : 1.0)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1)
+            .animation(.spring())
     }
 }
 
@@ -24,6 +24,7 @@ struct TabsView: View {
                 NavigationLink(destination: Breeds()) {
                     Tab(imageName: "Cat1", tabText: "Breeds")
                 }
+                
                 NavigationLink(destination: Quiz()) {
                     Tab(imageName: "Cat2", tabText: "Quiz")
                 }
@@ -32,6 +33,7 @@ struct TabsView: View {
                 NavigationLink(destination: Test()) {
                     Tab(imageName: "Cat3", tabText: "Cat for you")
                 }
+                
                 NavigationLink(destination: About()) {
                     Tab(imageName: "Cat4", tabText: "About")
                 }

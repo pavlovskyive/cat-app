@@ -24,12 +24,12 @@ struct Tab: View {
                 .renderingMode(.original)
                 .scaledToFit()
                 .cornerRadius(10)
+                //.shadow(color: Color(.systemGray4), radius: 2, x: 0, y: 2)
             
             Text(tabText)
                 .font(.headline)
                 .foregroundColor(.primary)
         }
-        //.animation(.interactiveSpring())
     }
 }
 
