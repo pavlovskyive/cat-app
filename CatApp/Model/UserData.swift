@@ -1,21 +1,21 @@
+////
+////  UserData.swift
+////  CatApp
+////
+////  Created by Vsevolod Pavlovskyi on 19.04.2020.
+////  Copyright © 2020 Vsevolod Pavlovskyi. All rights reserved.
+////
 //
-//  UserData.swift
-//  CatApp
+//import SwiftUI
+//import Combine
 //
-//  Created by Vsevolod Pavlovskyi on 19.04.2020.
-//  Copyright © 2020 Vsevolod Pavlovskyi. All rights reserved.
+//final class UserData: ObservableObject {
+//    @Published var breeds: [Breed] = []
 //
-
-import SwiftUI
-import Combine
-
-final class UserData: ObservableObject {
-    @Published var breeds: [Breed] = []
-    
-    init() {
-        NetworkManager(urlString: "").fetch(query: "breeds"){ (breeds: [Breed]) in
-            self.breeds = breeds
-        }
-    }
-}
-
+//    init() {
+//        NetworkManager(urlString: "").fetch(query: "breeds"){ (breeds: [Breed]) in
+//            self.breeds = breeds
+//        }
+//    }
+//}
+//

@@ -16,8 +16,8 @@
 		7943147B244C62D3001B727D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7943147A244C62D3001B727D /* Preview Assets.xcassets */; };
 		7943147E244C62D3001B727D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7943147C244C62D3001B727D /* LaunchScreen.storyboard */; };
 		79431489244C650C001B727D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79431488244C650C001B727D /* Tab.swift */; };
+		7944FA0C246C5E9600E3E145 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7944FA0B246C5E9600E3E145 /* NetworkManager.swift */; };
 		794D61D3244C73B7008EC73B /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61D2244C73B6008EC73B /* Breeds.swift */; };
-		794D61D5244C7683008EC73B /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61D4244C7683008EC73B /* Quiz.swift */; };
 		794D61D7244C7709008EC73B /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61D6244C7709008EC73B /* About.swift */; };
 		794D61D9244C7720008EC73B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61D8244C7720008EC73B /* Test.swift */; };
 		794D61DB244C777C008EC73B /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61DA244C777C008EC73B /* TabsView.swift */; };
@@ -39,8 +39,8 @@
 		7943147D244C62D3001B727D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7943147F244C62D3001B727D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79431488244C650C001B727D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		7944FA0B246C5E9600E3E145 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		794D61D2244C73B6008EC73B /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
-		794D61D4244C7683008EC73B /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		794D61D6244C7709008EC73B /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		794D61D8244C7720008EC73B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		794D61DA244C777C008EC73B /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				794D61D2244C73B6008EC73B /* Breeds.swift */,
-				794D61D4244C7683008EC73B /* Quiz.swift */,
 				794D61D6244C7709008EC73B /* About.swift */,
 				790D451A245354C900B821EF /* CompareView.swift */,
 				794D61D8244C7720008EC73B /* Test.swift */,
@@ -123,6 +122,7 @@
 			children = (
 				794D61DF244C8F88008EC73B /* Data.swift */,
 				7968AF89244C9A8D0051FC38 /* UserData.swift */,
+				7944FA0B246C5E9600E3E145 /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,13 +204,13 @@
 				794D61D9244C7720008EC73B /* Test.swift in Sources */,
 				794D61E0244C8F88008EC73B /* Data.swift in Sources */,
 				790D451B245354C900B821EF /* CompareView.swift in Sources */,
-				794D61D5244C7683008EC73B /* Quiz.swift in Sources */,
 				7968AF8A244C9A8D0051FC38 /* UserData.swift in Sources */,
 				794D61D7244C7709008EC73B /* About.swift in Sources */,
 				799E8F99244DF96900AD4F03 /* BreedDetail.swift in Sources */,
 				7943146F244C62CF001B727D /* AppDelegate.swift in Sources */,
 				79431476244C62CF001B727D /* ContentView.swift in Sources */,
 				79431489244C650C001B727D /* Tab.swift in Sources */,
+				7944FA0C246C5E9600E3E145 /* NetworkManager.swift in Sources */,
 				79431471244C62CF001B727D /* SceneDelegate.swift in Sources */,
 				79B5ACD82451E8A40056EDA0 /* CheckView.swift in Sources */,
 			);

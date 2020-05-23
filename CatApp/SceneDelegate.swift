@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = ContentView().environment(\.managedObjectContext, context)
         */
         
-        let contentView = ContentView().environmentObject(UserData())
+        let contentView = ContentView().environmentObject(NetworkManager())
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

@@ -10,7 +10,15 @@ import SwiftUI
 
 struct About: View {
     var body: some View {
-        Text("About")
+        VStack(spacing: 10) {
+            Text("Designed by Vsevolod Pavlovskyi")
+             Text("GitHub Link")
+                .foregroundColor(.blue)
+                .onTapGesture {
+                    let url = URL.init(string: "https://github.com/pavlovskyive/cat-app")
+                    UIApplication.shared.open(url!)
+            }
+        }
     }
 }
 

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var userData: UserData
+    @EnvironmentObject var networkManager: NetworkManager
     
     var body: some View {
         NavigationView {
@@ -22,6 +22,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(UserData())
+        ContentView().environmentObject(NetworkManager())
     }
 }

@@ -8,20 +8,8 @@
 
 import SwiftUI
 
-struct RowView: View {
-    var text: String
-    
-    var body: some View {
-        HStack {
-            Text(text)
-            Spacer()
-            Image(systemName: "chevron.right")
-        }
-    }
-}
-
 struct CompareView: View {
-    @EnvironmentObject var userData: UserData
+    @EnvironmentObject var networkManager: NetworkManager
     
     var temperamentTypes: [Type]
     
@@ -31,20 +19,14 @@ struct CompareView: View {
     
     var suitableBreeds: [Breed] {
         var finalArray: [Breed] = []
-        //TODO:
-        // Compare every breed with current and +
-        // store in temp dictionary count of same elements. +
-        //
-        // pop best, pop second best, pop third best
-        // return 3 best results
         
         var sameElements: [Breed: Int] = [:]
-        userData.breeds.forEach { breed in
+        networkManager.breeds.forEach { breed in
             var numberOfSameElements = 0
-            
+
             breed.temperament.components(separatedBy: ", ").forEach({
                 numberOfSameElements += choosedTypes.contains(String($0)) ? 1 : 0})
-            
+
             sameElements[breed] = numberOfSameElements
         }
         
@@ -65,25 +47,37 @@ struct CompareView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text("You choosed:")
-                        .font(.subheadline)
+                        .bold()
                     
                     Text(choosedTypes.joined(separator: ", "))
-                        .font(.system(size: 20)).lineLimit(nil)
+                        .font(Font.system(size: 20, weight: Font.Weight.light))
+                        .lineLimit(500)
                 }
                 Spacer()
             }
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(8)
             
-            Text("Most suitable breeds are:").bold()
-            VStack {
-                ForEach(suitableBreeds) { breed in
-                    NavigationLink(destination: BreedDetail(breed: breed)) {
-                        RowView(text: breed.name)
-                            .font(.system(size: 20))
+            VStack (alignment: .leading) {
+                Text("Most suitable breeds are:")
+                    .font(.title)
+                    
+                VStack {
+                    ForEach(suitableBreeds) { breed in
+                        NavigationLink(destination: BreedDetail(breed: breed)) {
+                            HStack {
+                                Text(breed.name)
+                                Spacer()
+                            }
+                            .padding()
+                        }
+                        .buttonStyle(BreedButtonStyle())
+                        .padding(.top, 15)
                     }
-                    Divider()
                 }
+                Spacer()
             }
-            Spacer()
         }
         .navigationBarTitle("Cat for you")
         .padding()
@@ -92,6 +86,6 @@ struct CompareView: View {
 
 struct CompareView_Previews: PreviewProvider {
     static var previews: some View {
-        CompareView(temperamentTypes: [Type(title: "Active", state: true), Type(title: "Energetic", state: false), Type(title: "Friendly", state: true)]).environmentObject(UserData())
+        CompareView(temperamentTypes: [Type(title: "Active", state: true), Type(title: "Energetic", state: false), Type(title: "Friendly", state: true)]).environmentObject(NetworkManager())
     }
 }

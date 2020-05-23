@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct NavigationLinkButtonStyle: ButtonStyle {
+struct TabButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.9 : 1)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
             .animation(.spring())
     }
 }
@@ -20,25 +20,20 @@ struct TabsView: View {
     
     var body: some View {
         VStack {
+            NavigationLink(destination: Test()) {
+                Tab(imageName: "Cat3", tabText: "Cat for you")
+            }
+
             HStack(spacing: 30) {
                 NavigationLink(destination: Breeds()) {
                     Tab(imageName: "Cat1", tabText: "Breeds")
-                }
-                
-                NavigationLink(destination: Quiz()) {
-                    Tab(imageName: "Cat2", tabText: "Quiz")
-                }
-            }
-            HStack(spacing: 30) {
-                NavigationLink(destination: Test()) {
-                    Tab(imageName: "Cat3", tabText: "Cat for you")
                 }
                 
                 NavigationLink(destination: About()) {
                     Tab(imageName: "Cat4", tabText: "About")
                 }
             }
-        }.buttonStyle(NavigationLinkButtonStyle())
+        }.buttonStyle(TabButtonStyle())
     }
 }
 

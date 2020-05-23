@@ -62,30 +62,30 @@ struct Test: View {
     ])
     
     var body: some View {
-        ScrollView {
+        VStack {
             Text("Choose temperament types which suit you most")
-                .font(.headline)
             
-            VStack {
-                ForEach(temperamentTypes.types.sorted()) { type in
+            ScrollView(.vertical) {
+                ForEach(temperamentTypes.types.sorted(), id: \.id) { type in
                     CheckView(type: type)
-                    Divider()
+                        .padding(.vertical, 5)
                 }
-            }.padding()
-            
-            NavigationLink(destination: CompareView(temperamentTypes: temperamentTypes.types)) {
-                Text("Apply")
-                    .padding(.vertical)
-                    .padding(.horizontal, 40)
+                .padding(.horizontal, 15)
             }
+
+            NavigationLink(destination: CompareView(temperamentTypes: temperamentTypes.types)) {
+                Spacer()
+                Text("Apply")
+                    .font(.system(size: 20))
+                Spacer()
+            }
+            .padding(.bottom, 30)
+            .padding(.top)
             .foregroundColor(.white)
-            .background(
-                Color.blue
-                    .cornerRadius(10)
-                    .shadow(radius: 4, x: 0, y: 2)
-            )
+            .background(Color(.systemBlue))
         }
         .navigationBarTitle("Temperament")
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
