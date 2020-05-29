@@ -21,10 +21,7 @@
 		794D61D7244C7709008EC73B /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61D6244C7709008EC73B /* About.swift */; };
 		794D61D9244C7720008EC73B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61D8244C7720008EC73B /* Test.swift */; };
 		794D61DB244C777C008EC73B /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61DA244C777C008EC73B /* TabsView.swift */; };
-		794D61E0244C8F88008EC73B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D61DF244C8F88008EC73B /* Data.swift */; };
-		7968AF8A244C9A8D0051FC38 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968AF89244C9A8D0051FC38 /* UserData.swift */; };
 		799E8F99244DF96900AD4F03 /* BreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E8F98244DF96900AD4F03 /* BreedDetail.swift */; };
-		79B5ACD82451E8A40056EDA0 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5ACD72451E8A40056EDA0 /* CheckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +41,7 @@
 		794D61D6244C7709008EC73B /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		794D61D8244C7720008EC73B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		794D61DA244C777C008EC73B /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
-		794D61DF244C8F88008EC73B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		7968AF89244C9A8D0051FC38 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		799E8F98244DF96900AD4F03 /* BreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetail.swift; sourceTree = "<group>"; };
-		79B5ACD72451E8A40056EDA0 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +103,6 @@
 				794D61D6244C7709008EC73B /* About.swift */,
 				790D451A245354C900B821EF /* CompareView.swift */,
 				794D61D8244C7720008EC73B /* Test.swift */,
-				79B5ACD72451E8A40056EDA0 /* CheckView.swift */,
 				794D61DA244C777C008EC73B /* TabsView.swift */,
 				79431488244C650C001B727D /* Tab.swift */,
 				799E8F98244DF96900AD4F03 /* BreedDetail.swift */,
@@ -120,8 +113,6 @@
 		794D61DE244C8C4F008EC73B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				794D61DF244C8F88008EC73B /* Data.swift */,
-				7968AF89244C9A8D0051FC38 /* UserData.swift */,
 				7944FA0B246C5E9600E3E145 /* NetworkManager.swift */,
 			);
 			path = Model;
@@ -202,9 +193,7 @@
 				794D61D3244C73B7008EC73B /* Breeds.swift in Sources */,
 				79431474244C62CF001B727D /* CatApp.xcdatamodeld in Sources */,
 				794D61D9244C7720008EC73B /* Test.swift in Sources */,
-				794D61E0244C8F88008EC73B /* Data.swift in Sources */,
 				790D451B245354C900B821EF /* CompareView.swift in Sources */,
-				7968AF8A244C9A8D0051FC38 /* UserData.swift in Sources */,
 				794D61D7244C7709008EC73B /* About.swift in Sources */,
 				799E8F99244DF96900AD4F03 /* BreedDetail.swift in Sources */,
 				7943146F244C62CF001B727D /* AppDelegate.swift in Sources */,
@@ -212,7 +201,6 @@
 				79431489244C650C001B727D /* Tab.swift in Sources */,
 				7944FA0C246C5E9600E3E145 /* NetworkManager.swift in Sources */,
 				79431471244C62CF001B727D /* SceneDelegate.swift in Sources */,
-				79B5ACD82451E8A40056EDA0 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

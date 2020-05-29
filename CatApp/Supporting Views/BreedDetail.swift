@@ -62,6 +62,7 @@ struct CardView: View {
     }
 }
 
+// Load image from url
 struct ImageView: View {
     @ObservedObject var imageLoader: ImageLoader
     
@@ -71,6 +72,7 @@ struct ImageView: View {
     
     var body: some View {
         VStack {
+            // if we have some data then put image from data
             if (imageLoader.data.count != 0) {
                 Image(uiImage: UIImage(data: imageLoader.data)!)
                     .resizable()

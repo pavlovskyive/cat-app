@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+// Simple View with text and URL to Git
+// On tap open link in defauld browser
 struct About: View {
     var body: some View {
         VStack(spacing: 10) {
